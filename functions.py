@@ -375,11 +375,11 @@ FR_curvature = [0, 0, 0] # Central initial displacement of each frame (circular 
 P = [0, 0, 0]
 
 # Linear analysis
-# R = G_Run(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ, N_KX, N_KY, N_KZ, N_PDX, N_PDY, N_PDZ, FR_START, FR_END, FR_Qx, FR_Qy, FR_Tinf, FR_Tsup, FR_yinf, FR_ysup, FR_tensile, FR_curvature, FR_E, FR_I, FR_A, FR_alpha, P)
-
+R1 = G_Run(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ, N_KX, N_KY, N_KZ, N_PDX, N_PDY, N_PDZ, FR_START, FR_END, FR_Qx, FR_Qy, FR_Tinf, FR_Tsup, FR_yinf, FR_ysup, FR_tensile, FR_curvature, FR_E, FR_I, FR_A, FR_alpha, P)
+print(R1[0][3])
 
 # Non-linear analysis
 maxerror = 0.0001
 maxiter = 10
-R = G_Iteration(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ, N_KX, N_KY, N_KZ, N_PDX, N_PDY, N_PDZ, FR_START, FR_END, FR_Qx, FR_Qy, FR_Tinf, FR_Tsup, FR_yinf, FR_ysup, FR_tensile, FR_curvature, FR_E, FR_I, FR_A, FR_alpha, maxerror, maxiter)
-print(R[0][3])
+R2 = G_Iteration(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ, N_KX, N_KY, N_KZ, N_PDX, N_PDY, N_PDZ, FR_START, FR_END, FR_Qx, FR_Qy, FR_Tinf, FR_Tsup, FR_yinf, FR_ysup, FR_tensile, FR_curvature, FR_E, FR_I, FR_A, FR_alpha, maxerror, maxiter)
+print(R2[0][3])
