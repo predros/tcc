@@ -375,6 +375,9 @@ def G_Run(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ,
     for i in range(len(FR_FE)):
         FEL = np.dot(FR_R[i], FR_FE[i])
         FR_FEL.append(FEL)
+    
+    # Displacement matrix
+    displMatrix = NodeDisplacement(d)
 
     # Normal forces
     PF = []
@@ -382,7 +385,7 @@ def G_Run(N_X, N_Y, N_PX, N_PY, N_MZ, N_RESTRX, N_RESTRY, N_RESTRZ,
         PF.append(FR_FEL[i][3])
 
     # Results array
-    RESULTS = [d, FR_FEL, PF]
+    RESULTS = [displMatrix[0], displMatrix[1], displMatrix[2],, FR_FEL, PF]
     return RESULTS
 
 
